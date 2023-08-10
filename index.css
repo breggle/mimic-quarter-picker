@@ -1,0 +1,57 @@
+.quarter-table {
+  .el-month-table {
+    td .cell {
+      position: relative;
+      &::after {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        color: inherit;
+        border-radius: inherit;
+        background-color: #fff;
+      }
+    }
+    td.in-range .cell::after {
+      background-color: var(--el-datepicker-inrange-bg-color);
+    }
+    td.start-date, td.end-date {
+      .cell::after {
+        background-color: inherit;
+      }
+    }
+    tr:nth-of-type(1) {
+      td:nth-of-type(1) .cell {
+        &::after {
+          content: '第一季度';
+        }
+      }
+      td:nth-of-type(2) .cell {
+        &::after {
+          content: '第二季度';
+        }
+      }
+    }
+    tr:nth-of-type(2) {
+      td:nth-of-type(1) .cell {
+        &::after {
+          content: '第三季度';
+        }
+      }
+      td:nth-of-type(2) .cell {
+        &::after {
+          content: '第四季度';
+        }
+      }
+    }
+    tr {
+      td:nth-of-type(3), td:nth-of-type(4) {
+        display: none;
+      }
+    }
+    tr:nth-of-type(3) {
+      display: none;
+    }
+  }
+}
